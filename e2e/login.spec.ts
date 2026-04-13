@@ -1,3 +1,7 @@
+ 
+ 
+ 
+ 
 import { test, expect, Page } from '@playwright/test';
 
 test('usuário obrigatório', async ({ page }) => {
@@ -36,7 +40,7 @@ const modal = async (page: Page, message: string) => {
 }
 
 const login = async (page: Page, user: string, pass: string) => {
-    await page.goto('/')
+    await page.goto('/')//Inicia o navegador na pagina connfigurada no arquivo playwright.config
 
     const username = page.locator('[name=user]')
     const password = page.locator('[name=pass]')
