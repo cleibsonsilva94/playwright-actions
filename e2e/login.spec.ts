@@ -1,12 +1,12 @@
 import { test, expect, Page } from '@playwright/test';
 
 test('usuário obrigatório', async ({ page }) => {
-  await login(page, '', 'senha123')
+  await login(page, '', 'secret_sauce')
   await toast(page, 'Epic sadface: Username is required');
 });
 
 test('senha obrigatória', async ({ page }) => {
-  await login(page,'qa', '')
+  await login(page,'standard_user', '')
   await toast(page, 'Epic sadface: Password is required')
 })
 
@@ -25,8 +25,10 @@ test('senha obrigatória', async ({ page }) => {
 //   await modal(page, 'Suas credenciais são válidas :)')
 // })
 
-const  toast = async (page: Page, message: string) => {
-  const target = page.locator('.swal2-html-container')
+const toast = async (page: Page, message: string) => {
+  const target = page.locator('[class="error-message-container error"]')
+  await expect(target).toBeVisible()
+  await expect(target).toHaveText(message)
 }
 
 const modal = async (page: Page, message: string) => {
