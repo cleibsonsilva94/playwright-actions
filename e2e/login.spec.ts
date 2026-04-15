@@ -16,7 +16,7 @@ test('senha obrigatória', async ({ page }) => {
 
 test('Usuário não existe', async ({ page }) => {
   await login(page,'secret_sauce', 'standard_user')
-  await toast(page, 'Epic sadface: Username and password do not match any user in this serv')
+  await toast(page, 'Epic sadface: Username and password do not match any user in this servce')
 })
 
 test('Login com sucesso', async ({ page }) => {
