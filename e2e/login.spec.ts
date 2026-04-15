@@ -24,6 +24,11 @@ test('Login com sucesso', async ({ page }) => {
   await modal2(page)
 })
 
+
+// =====================
+//  Functions Login page
+// =====================
+
 const toast = async (page: Page, message: string) => {
   const target = page.locator('[class="error-message-container error"]')
   await expect(target).toBeVisible()
@@ -39,11 +44,6 @@ const modal2 = async (page: Page) => {
   const cart = page.locator('#shopping_cart_container')
   await expect(cart).toBeVisible()
 }
-
-  
-// ================
-//  Functions Login
-// ================
 const login = async (page: Page, user: string, pass: string) => {
     await page.goto('/')//Inicia o navegador na pagina connfigurada no arquivo playwright.config
 
