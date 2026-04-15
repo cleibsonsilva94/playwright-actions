@@ -5,7 +5,7 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-
+  workflow_dispatch: 
 jobs:
   playwright-e2e:
     name: Executar testes E2E com Playwright
