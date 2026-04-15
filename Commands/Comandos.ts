@@ -2,12 +2,22 @@
 //  COMANDOS
 // ==============================
 //
-// Para iniciar o projeto do zero:
-// npm init playwright@latest
-//
-
-//Iniciar testes com a interface gráfica do navegador visível:
-// npx playwright test --headed
+/**
+ * ▶ Executar TODOS os testes (headless - padrão, sem abrir navegador)
+ * npx playwright test
+ *
+ * ▶ Executar TODOS os testes com navegador aberto
+ * npx playwright test --headed
+ *
+ * ▶ Executar UM teste específico pelo nome
+ * npx playwright test -g "Login com sucesso"
+ *
+ * ▶ Executar UM arquivo de teste específico
+ * npx playwright test tests/login.spec.ts
+ *
+ * ▶ Abrir a interface gráfica do Playwright (UI Mode)
+ * npx playwright test --ui
+ */
 //
 
 // ==================================================
