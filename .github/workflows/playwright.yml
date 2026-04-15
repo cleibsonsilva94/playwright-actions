@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      uses: actions/setup-node@v4
       with:
         node-version: 18
 
@@ -20,8 +21,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
 
-    - name: Report generation
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-report
